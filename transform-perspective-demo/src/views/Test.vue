@@ -1,0 +1,66 @@
+<template>
+  <div>
+    <div class="wrap">
+      <div class="spin">
+        <div class="rotate">
+          <img src="https://picsum.photos/200/300" alt width="142" height="200">
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="spin">
+        <div class="rotate three-d">
+          <img src="https://picsum.photos/200/300" alt width="142" height="200">
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+.wrap {
+  width: 500px;
+  height: 300px;
+  margin: 30px auto;
+  position: relative;
+  background: lightgray;
+  background-size: 100% 100%;
+} /*设置动画*/
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.spin {
+  width: 142px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -72px;
+  margin-top: -101px;
+  border: 1px dashed orange;
+  cursor: pointer;
+  transform-style: preserve-3d;
+} /*调用动画*/
+.spin:hover {
+  animation: spin 5s linear infinite;
+}
+.rotate {
+  background: url("https://picsum.photos/200/300") no-repeat center;
+  background-size: 100% 100%;
+  border: 5px solid hsla(50, 50%, 50%, 0.9);
+  transform: perspective(200px) rotateY(40deg);
+}
+.rotate img {
+  border: 1px solid green;
+  transform: rotateX(15deg) translateZ(10px);
+  transform-origin: 0 0 40px;
+} /*改变transform-style的默认值*/
+.three-d {
+  transform-style: preserve-3d;
+}
+</style>
