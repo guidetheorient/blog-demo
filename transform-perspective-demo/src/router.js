@@ -21,23 +21,32 @@ const routes = [
   },
   {
     path: '/TransformOriginRotate',
-    label: 'TransformOriginRotate',
+    label: 'TransformOrigin + Rotate',
     component: () => import('./views/TransformOriginRotate')
   },
   {
     path: '/TransformOriginSkew',
-    label: 'TransformOriginSkew',
+    label: 'TransformOrigin + Skew',
     component: () => import('./views/TransformOriginSkew')
   },
   {
     path: '/TransformOriginScale',
-    label: 'TransformOriginScale',
+    label: 'TransformOrigin + Scale',
     component: () => import('./views/TransformOriginScale')
+  },
+  {
+    path: '/Cube',
+    label: 'Cube',
+    component: () => import('./views/Cube')
+  },
+  {
+    path: '/BackfaceVisibility',
+    label: 'backface-visibility',
+    component: () => import('./views/BackfaceVisibility')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

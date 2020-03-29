@@ -1,17 +1,16 @@
 {
-  "name": "perspective-demo",
+  "name": "test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
-    "animejs": "^3.1.0"
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
@@ -24,7 +23,8 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2",
+    "eslint-plugin-vue": "6.2.1",
+    "lint-staged": "^9.5.0",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
@@ -40,10 +40,20 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

@@ -54,8 +54,9 @@ html, body{
     }
   }
   .main-wrapper{
-    padding: 30px 50px;
+    flex: 1;
     overflow: auto;
+    padding: 30px 50px;
   }
 }
 
